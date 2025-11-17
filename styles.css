@@ -495,8 +495,8 @@ body {
 }
 
 .contact-photo {
-  width: 150px !important;
-  height: 150px !important;
+  width: 250px !important;
+  height: 250px !important;
   object-fit: cover;
   border-radius: 0.75rem;
   box-shadow: 0 0 0 2px rgba(56, 78, 120, 0.15);
@@ -508,6 +508,7 @@ body {
 .contact-text {
   flex: 1;
 }
+
 
 
 
