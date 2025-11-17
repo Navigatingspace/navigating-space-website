@@ -26,7 +26,8 @@ html {
 
 body {
   margin: 0;
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
   color: var(--text-main);
   background-color: #f3f4f6;
 }
@@ -194,18 +195,19 @@ body {
   align-items: center;
 }
 
-.hero-text h1 {
+.hero-title {
   font-family: "Playfair Display", "Times New Roman", serif;
   font-size: clamp(2.4rem, 3.6vw, 3.1rem);
   line-height: 1.12;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
   color: #111827;
 }
 
-.hero-subtitle {
+.hero-tagline {
+  font-size: 1.1rem;
   color: var(--text-muted);
-  max-width: 540px;
   margin-bottom: 1.75rem;
+  max-width: 480px;
 }
 
 .hero-actions {
@@ -214,16 +216,7 @@ body {
   gap: 0.9rem;
 }
 
-.eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  font-size: 0.7rem;
-  font-weight: 500;
-  color: #6b7280;
-  margin-bottom: 0.6rem;
-}
-
-/* Hero image + caption */
+/* Hero image */
 
 .hero-visual {
   display: flex;
@@ -247,17 +240,9 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: saturate(0.7) brightness(0.98);
 }
 
-.hero-caption {
-  margin: 0;
-  font-size: 0.88rem;
-  color: var(--text-muted);
-  text-align: center;
-}
-
-/* Subtle wave decoration */
+/* Subtle wave decoration at bottom of hero */
 
 .hero-wave {
   position: absolute;
@@ -457,10 +442,6 @@ body {
   font-size: 0.8rem;
 }
 
-.footer-credit {
-  color: rgba(148, 163, 184, 0.9);
-}
-
 /* ===== Responsive ===== */
 
 @media (max-width: 900px) {
@@ -498,7 +479,6 @@ body {
     padding: 0 1rem;
   }
 
-  .hero-image-frame,
   .about-highlight,
   .contact-form,
   .card {
