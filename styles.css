@@ -495,16 +495,19 @@ body {
 }
 
 .contact-photo {
-  width: 140px;
-  height: 140px;
+  width: 120px !important;
+  height: 120px !important;
   object-fit: cover;
   border-radius: 0.75rem;
   box-shadow: 0 0 0 2px rgba(56, 78, 120, 0.15);
-  flex-shrink: 0;
+  display: block;
+}
+
 }
 
 .contact-text {
   flex: 1;
 }
+
 
 
