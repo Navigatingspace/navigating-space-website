@@ -19,13 +19,14 @@
   <header class="site-header">
     <div class="container nav-container">
       <a href="#top" class="logo">
-        <img src="images/logo.png" alt="Navigating Space logo" />
+        <img src="logo.png" alt="Navigating Space logo" />
         <span class="logo-text">Navigating Space</span>
       </a>
       <nav class="main-nav">
         <a href="#about">Biography</a>
         <a href="#services">Supervision &amp; more</a>
-        <a href="#calendar">Book</a>
+        <a href="#fees">Fees</a>
+        <a href="#calendar">Schedule</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -39,26 +40,20 @@
           <p class="eyebrow">Supervision • Coaching • Consultation</p>
           <h1>Supervision, coaching and consulting to help you navigate practice and wellbeing.</h1>
           <p class="hero-subtitle">
-            Navigating Space. Supervision, Coaching and Consulting. Tēnā koe. Welcome.
+            A calm, reflective space for social workers, practitioners and organisations.
           </p>
           <div class="hero-actions">
-            <a href="#calendar" class="btn btn-primary">Book a session</a>
-            <a href="#about" class="btn btn-outline">Biography</a>
+            <a href="#calendar" class="btn btn-primary">Schedule a session</a>
+            <a href="#about" class="btn btn-outline">Learn more</a>
           </div>
         </div>
-        <div class="hero-card">
-          <h2>Your next step</h2>
-          <p>
-            Supervision is a form of supported reflective practice that allows you to
-            consider and process issues in your work life; both the successes and the
-            challenges.
+        <div class="hero-visual">
+          <div class="hero-image-frame">
+            <img src="images/ship-hero.jpg" alt="Illustration of a small ship on calm water" />
+          </div>
+          <p class="hero-caption">
+            A steady place to pause and navigate the waters of practice.
           </p>
-          <ul class="hero-list">
-            <li>Relationality – The corner-stone. Once relationship is established we can begin the journey.</li>
-            <li>Empowering &amp; person-centered – Here to support your journey. I trust that you have the knowledge within you and simply need support to chart your own course.</li>
-            <li>Strengths-based – Through our challenges, we grow.</li>
-          </ul>
-          <a href="#calendar" class="btn btn-primary btn-full">View availability</a>
         </div>
       </div>
       <div class="hero-wave"></div>
@@ -71,9 +66,10 @@
           <h2>Biography</h2>
           <p>
             Ko wai au?<br />
-            Ko Europe me Fiji ngā whenua tīpuna<br />
+            Ko Fiji, raua Holland raua England oku tipuna<br />
             I tipu ake au ki Papakura<br />
-            Ko Adam Bouman tōku ingoa
+            No Papaioea ahau e noha ana<br />
+            Ko Adam Bouman toku ingoa
           </p>
           <p>
             Registered social worker with experience in mental health and AOD, older people,
@@ -117,9 +113,7 @@
               I use a blend of motivational interviewing techniques, Socratic questioning and
               reflective learning cycles to support your process of insight and knowledge gaining.
               I am a registered social worker, who also supervises people from other professional
-              backgrounds. Supervision can be for anyone who feels like they would benefit from it
-              and is a great professional growth tool. It can also help to safeguard mental
-              wellbeing for those who engage in emotionally taxing work.
+              backgrounds.
             </p>
           </article>
           <article class="card">
@@ -140,21 +134,59 @@
               health and AOD, and mental wellbeing, with bespoke training to meet organisational
               needs available on request. Consultation work can take many forms; I have
               experience in facilitating strategic and team processes and in reviewing programmes
-              and organisational issues, including team mediation and facilitation, workshop
-              facilitation, strategic planning facilitation, external review of education and
-              training material, and board-requested NGO organisational review.
+              and organisational issues.
             </p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Calendar / Booking Section -->
-    <section id="calendar" class="section">
+    <!-- Fees Section -->
+    <section id="fees" class="section">
+      <div class="container two-column">
+        <div>
+          <h2>Fees</h2>
+          <p class="section-intro">
+            Fees are set to reflect the time, care and preparation that go into each session, while
+            remaining as accessible as possible. Please get in touch if cost is a barrier.
+          </p>
+          <p>
+            The fees below are a guide. We can talk together about what is manageable for you or
+            your organisation.
+          </p>
+        </div>
+        <div class="fees-panel">
+          <div class="fee-item">
+            <h3>Individual supervision &amp; coaching</h3>
+            <p class="fee-amount">
+              <!-- Example only – replace with your real fee. -->
+              From $XXX per 60-minute session
+            </p>
+            <p class="fee-notes">
+              Reduced fees may be available in some circumstances. Online sessions only.
+            </p>
+          </div>
+          <div class="fee-item">
+            <h3>Training &amp; consultation</h3>
+            <p class="fee-amount">
+              <!-- Example only – replace with your real fee. -->
+              Pricing by arrangement
+            </p>
+            <p class="fee-notes">
+              Fees depend on scope, preparation time and travel (if applicable). Please contact me
+              to discuss your organisation’s needs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Calendar / Scheduling Section -->
+    <section id="calendar" class="section section-alt">
       <div class="container">
-        <h2>Book a session</h2>
+        <h2>Schedule a session</h2>
         <p class="section-intro">
-          For a free, no obligation kōrero, you are welcome to book a time that works for you to
+          For a free, no obligation kōrero, you are welcome to schedule a time that works for you to
           discuss supervision, coaching, training or consultation.
         </p>
 
@@ -176,7 +208,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section section-alt">
+    <section id="contact" class="section">
       <div class="container two-column">
         <div>
           <h2>Contact</h2>
@@ -227,3 +259,8 @@
   </footer>
 
   <script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
