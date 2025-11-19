@@ -387,6 +387,17 @@ body {
   transition: opacity 0.3s ease;
 }
 
+#fees .two-column > div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quote-panel {
+  width: 100%;
+  max-width: 380px; /* prevents it from stretching too wide */
+}
+
 
 /* ===== Calendar ===== */
 
@@ -537,6 +548,7 @@ body {
 .contact-text {
   flex: 1;
 }
+
 
 
 
