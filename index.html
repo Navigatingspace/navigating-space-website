@@ -268,80 +268,65 @@
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.addEventListener("DOMContentLoaded", function () {
+      // Footer year
+      const yearEl = document.getElementById("year");
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+
+      // Rotating quotes beside Fees
+      const quotes = [
+        {
+          text: "From our very first session, Adam created a safe space that always felt deeply respectful.",
+          attribution: "Supervisee"
+        },
+        {
+          text: "Adam brings genuine kindness and professionalism to his practice, which is further strengthened by a sense of humour that makes supervision not only a valuable space, but an enjoyable one.",
+          attribution: "Supervisee"
+        },
+        {
+          text: "His calm, empathetic presence and non-judgemental approach consistently supported me to reflect on and learn from professional challenges with confidence.",
+          attribution: "Supervisee"
+        }
+      ];
+
+      const quoteTextEl = document.getElementById("quote-text");
+      const quoteAttribEl = document.getElementById("quote-attrib");
+      let currentQuote = 0;
+
+      if (!quoteTextEl || !quoteAttribEl) {
+        return; // elements not found, don't run rotation
+      }
+
+      function showQuote(index) {
+        // Fade out
+        quoteTextEl.style.opacity = 0;
+        quoteAttribEl.style.opacity = 0;
+
+        setTimeout(() => {
+          const q = quotes[index];
+          quoteTextEl.textContent = `“${q.text}”`;
+          quoteAttribEl.textContent = q.attribution;
+
+          // Fade in
+          quoteTextEl.style.opacity = 1;
+          quoteAttribEl.style.opacity = 1;
+        }, 250);
+      }
+
+      // Initial display
+      showQuote(currentQuote);
+
+      // Rotate every 8 seconds
+      setInterval(() => {
+        currentQuote = (currentQuote + 1) % quotes.length;
+        showQuote(currentQuote);
+      }, 8000);
+    });
   </script>
-<script>
-  // Footer year
-  const yearEl = document.getElementById('year');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-  // Rotating quotes beside Fees
-  const quotes = [
-    {
-      text: "From our very first session, Adam created a safe space that always felt deeply respectful..",
-      attribution: "Supervisee"
-    },
-    {
-      text: "Adam brings genuine kindness and professionalism to his practice, which is further strengthened by a sense of humour that makes supervision not only a valuable space, but an enjoyable one.",
-      attribution: "Supervisee"
-    },
-    {
-      text: "His calm, empathetic presence and non-judgemental approach consistently supported me to reflect on and learn from professional challenges with confidence.",
-      attribution: "Supervisee"
-    },
-   
-  ];
-
-  const quoteTextEl = document.getElementById('quote-text');
-  const quoteAttribEl = document.getElementById('quote-attrib');
-  let currentQuote = 0;
-
-  function showQuote(index) {
-    if (!quoteTextEl || !quoteAttribEl) return;
-
-    // Fade out
-    quoteTextEl.style.opacity = 0;
-    quoteAttribEl.style.opacity = 0;
-
-    setTimeout(() => {
-      const q = quotes[index];
-      quoteTextEl.textContent = `“${q.text}”`;
-      quoteAttribEl.textContent = q.attribution;
-
-      // Fade in
-      quoteTextEl.style.opacity = 1;
-      quoteAttribEl.style.opacity = 1;
-    }, 250);
-  }
-
-  // Initial display
-  showQuote(currentQuote);
-
-  // Rotate every 8 seconds
-  setInterval(() => {
-    currentQuote = (currentQuote + 1) % quotes.length;
-    showQuote(currentQuote);
-  }, 8000);
-</script>
-  
 </body>
 </html>
-
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
