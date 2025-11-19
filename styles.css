@@ -359,7 +359,7 @@ body {
   color: var(--text-muted);
 }
 
-/* Rotating quote panel next to Fees */
+/* Rotating quote panel */
 .quote-panel {
   background-color: var(--white);
   border-radius: var(--radius-lg);
@@ -370,6 +370,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 380px;
 }
 
 .quote-text {
@@ -387,20 +388,17 @@ body {
   transition: opacity 0.3s ease;
 }
 
-.quote-panel {
-  width: 100%;
-  max-width: 380px; /* prevents it from stretching too wide */
-}
-
+/* Proper vertical centering of the quote box */
 #fees .two-column {
-  align-items: stretch; /* or center */
+  align-items: flex-start;
 }
 
-#fees .two-column > div:first-child {
-  display: flex !important;
+#fees .testimony-column {
+  display: flex;
   flex-direction: column;
-  justify-content: center !important;
+  justify-content: center;
 }
+
 
 
 /* ===== Calendar ===== */
@@ -552,6 +550,7 @@ body {
 .contact-text {
   flex: 1;
 }
+
 
 
 
