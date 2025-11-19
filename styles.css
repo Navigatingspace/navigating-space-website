@@ -387,15 +387,19 @@ body {
   transition: opacity 0.3s ease;
 }
 
-#fees .two-column > div:first-child {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .quote-panel {
   width: 100%;
   max-width: 380px; /* prevents it from stretching too wide */
+}
+
+#fees .two-column {
+  align-items: stretch; /* or center */
+}
+
+#fees .two-column > div:first-child {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center !important;
 }
 
 
@@ -548,6 +552,7 @@ body {
 .contact-text {
   flex: 1;
 }
+
 
 
 
