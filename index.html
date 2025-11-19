@@ -130,22 +130,26 @@
       </div>
     </section>
 
-  <!-- FEES -->
+ <!-- FEES -->
 <section id="fees" class="section">
   <div class="container two-column">
 
-    <!-- LEFT column: rotating quote box -->
-    <div>
+    <!-- LEFT column: Quote box with header -->
+    <div class="testimony-column">
+      <h2>Client Testimony</h2>
+
       <div class="quote-panel">
         <p id="quote-text" class="quote-text">
-          “From our very first session, Adam created a safe space that always felt deeply respectful."
+          “From our very first session, Adam created a safe space that always felt deeply respectful.”
+        </p>
+        <p id="quote-attrib" class="quote-attrib">
           Supervisee
         </p>
       </div>
     </div>
 
     <!-- RIGHT column: Fees -->
-    <div>
+    <div class="fees-column">
       <h2>Fees</h2>
       <p class="section-intro">
         Fees reflect the care, preparation and support offered in each session.
@@ -171,6 +175,7 @@
 
   </div>
 </section>
+
 
 
     <!-- CALENDAR -->
@@ -265,65 +270,51 @@
     </div>
   </footer>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      // Footer year
-      const yearEl = document.getElementById("year");
-      if (yearEl) {
-        yearEl.textContent = new Date().getFullYear();
-      }
+ <script>
+document.addEventListener("DOMContentLoaded", () => {
 
-      // Rotating quotes beside Fees
-      const quotes = [
-        {
-          text: "Adam brings genuine kindness and professionalism to his practice, which is further strengthened by a sense of humour that makes supervision not only a valuable space, but an enjoyable one.",
-          attribution: "Supervisee"
-        },
-        {
-          text: "His calm, empathetic presence and non-judgemental approach consistently supported me to reflect on and learn from professional challenges with confidence.",
-          attribution: "Supervisee"
-        }
-      ];
+  // Update footer year
+  const y = document.getElementById("year");
+  if (y) y.textContent = new Date().getFullYear();
 
-      const quoteTextEl = document.getElementById("quote-text");
-      const quoteAttribEl = document.getElementById("quote-attrib");
-      let currentQuote = 0;
+  // ===== ROTATING QUOTES =====
+  const quotes = [
+    {
+      text: "From our very first session, Adam created a safe space that always felt deeply respectful.",
+      attribution: "Supervisee"
+    },
+    {
+      text: "Adam brings genuine kindness and professionalism to his practice, making supervision both valuable and enjoyable.",
+      attribution: "Supervisee"
+    },
+    {
+      text: "His calm, empathetic presence supported me to reflect on and learn from professional challenges with confidence.",
+      attribution: "Supervisee"
+    }
+  ];
 
-      if (!quoteTextEl || !quoteAttribEl) {
-        return; // elements not found, don't run rotation
-      }
+  const quoteText = document.getElementById("quote-text");
+  const quoteAttrib = document.getElementById("quote-attrib");
 
-      function showQuote(index) {
-        // Fade out
-        quoteTextEl.style.opacity = 0;
-        quoteAttribEl.style.opacity = 0;
+  let current = 0;
 
-        setTimeout(() => {
-          const q = quotes[index];
-          quoteTextEl.textContent = `“${q.text}”`;
-          quoteAttribEl.textContent = q.attribution;
+  function changeQuote() {
+    quoteText.style.opacity = 0;
+    quoteAttrib.style.opacity = 0;
 
-          // Fade in
-          quoteTextEl.style.opacity = 1;
-          quoteAttribEl.style.opacity = 1;
-        }, 250);
-      }
+    setTimeout(() => {
+      const q = quotes[current];
+      quoteText.textContent = `“${q.text}”`;
+      quoteAttrib.textContent = q.attribution;
+      quoteText.style.opacity = 1;
+      quoteAttrib.style.opacity = 1;
+    }, 300);
 
-      // Initial display
-      showQuote(currentQuote);
+    current = (current + 1) % quotes.length;
+  }
 
-      // Rotate every 8 seconds
-      setInterval(() => {
-        currentQuote = (currentQuote + 1) % quotes.length;
-        showQuote(currentQuote);
-      }, 8000);
-    });
-  </script>
-</body>
-</html>
-
-
-
-
-
-
+  // Start rotation
+  changeQuote();
+  setInterval(changeQuote, 8000);
+});
+</script>
